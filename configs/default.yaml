@@ -1,0 +1,28 @@
+data:
+  root: /path/to/mvtec3d
+  category: bagel
+  img_size: 224
+  num_points: 4096
+  ransac_distance: 0.005
+
+model:
+  backbone_2d: wide_resnet50_2
+  layer_2d: layer3
+  d_2d: 512
+  d_3d: 128
+  num_views: 7
+
+  rot_x_range: [-90.0, 90.0]
+  rot_y_range: [-10.0, 10.0]
+  rot_z_range: [-10.0, 10.0]
+
+train:
+  epochs: 300
+  batch_size: 1
+  lr: 0.005
+  optimizer: adam
+  alpha_reg: 0.09
+  seed: 42
+
+test:
+  smooth_kernel: 5
